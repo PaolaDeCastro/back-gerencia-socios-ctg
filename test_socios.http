@@ -92,3 +92,39 @@ GET http://localhost:8000/api/socios/6
 Accept: application/json
 
 ###
+
+
+
+
+### TESTAR INATIVAÇÃO DO SÓCIO TITULAR
+PUT http://localhost:8000/api/socios/1
+Content-Type: application/json
+X-Auth-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiYWRtaW5AY3RnLmxvY2FsIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzg4ODEwMzAzLCJleHAiOjE3ODg4MTM5MDN9.7jVyIkmAyw5zA4wrODHqXYipZikh-YKheSgi6HN2ezQ
+
+
+{
+  "nome": "João Silva",
+  "cpf": "476.457.130-70",
+  "telefone": "(11) 99999-9999",
+  "email": "joao@gmail.com",
+  "foto": "",
+  "logradouro": "Rua das Flores, 123",
+  "numero": "",
+  "bairro": "",
+  "cidade": "",
+  "estado": "",
+  "cep": "",
+  "complemento": null,
+  "data_nascimento": "1990-04-15",
+  "data_entrada": "2026-01-15",
+  "status": "Inativo",
+  "categoria": "3",
+  "dancarino": true,
+  "paga_instrutor": false
+}
+
+
+### VERIFICAR DEPENDENTES DO JOÃO
+
+GET http://localhost:8000/api/dependentes?socio_titular_id=1
+X-Auth-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiYWRtaW5AY3RnLmxvY2FsIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzg4ODEwMzAzLCJleHAiOjE3ODg4MTM5MDN9.7jVyIkmAyw5zA4wrODHqXYipZikh-YKheSgi6HN2ezQ
